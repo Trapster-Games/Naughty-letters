@@ -1,0 +1,24 @@
+[gd_resource type="Theme" load_steps=6 format=2]
+
+[ext_resource path="res://assets/fonts/Sen/Sen-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/Theme/Button/Box_norma.tres" type="StyleBox" id=2]
+[ext_resource path="res://assets/Theme/Button/Box_Hover.tres" type="StyleBox" id=3]
+[ext_resource path="res://assets/Theme/Button/Box_Pressed.tres" type="StyleBox" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 120
+font_data = ExtResource( 1 )
+
+[resource]
+default_font = SubResource( 1 )
+Button/colors/font_color = Color( 1, 1, 1, 1 )
+Button/colors/font_color_disabled = Color( 0.388235, 0.172549, 0.172549, 0.2 )
+Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
+Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = ExtResource( 2 )
+Button/styles/hover = ExtResource( 3 )
+Button/styles/normal = ExtResource( 2 )
+Button/styles/pressed = ExtResource( 4 )
