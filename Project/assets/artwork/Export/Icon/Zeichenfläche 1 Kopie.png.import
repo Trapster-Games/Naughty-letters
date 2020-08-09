@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Homescreen.png-d11dd2b3ca3934396c851f1c1123e696.stex"
+path="res://.import/Zeichenfläche 1 Kopie.png-17ffd8d63200d1c052547f32706de27d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/artwork/Export/Homescreen.png"
-dest_files=[ "res://.import/Homescreen.png-d11dd2b3ca3934396c851f1c1123e696.stex" ]
+source_file="res://assets/artwork/Export/Icon/Zeichenfläche 1 Kopie.png"
+dest_files=[ "res://.import/Zeichenfläche 1 Kopie.png-17ffd8d63200d1c052547f32706de27d.stex" ]
 
 [params]
 
