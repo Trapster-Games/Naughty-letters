@@ -1,26 +1,26 @@
 extends Control
 
-onready var PlayBtn = get_node("Play")
-onready var CustomBtn = get_node("Custom")
-onready var SettingsBtn = get_node("Settings")
-onready var HowToBtn = get_node("How to")
+onready var CameraPosition:Position2D = get_parent().get_node(("CameraPosition"));
+onready var MenuOptions = {
+	"Main" : get_node("Main"),
+	"Play" : get_node("Play"),
+	"Custom": get_node("Custom"),
+	"Settings":get_node("Settings"),
+	"How_to":get_node("How to")
+}
 
+func _ready():
+	_HideExcept("Main") #Hide all elements except the main menu
+	_CameraMove(Vector2(1123,540))
 
-# -- Main Menu Buttons
-func _on_Play_pressed():
-	print("Play Button pressed")
-	#TODO 
+func _HideExcept(except): #works (also) as signal for the buttons
+	print("CurrentMenuMode: " + except)
+	for i in MenuOptions:
+		if i == except: MenuOptions[i].show()
+		else: MenuOptions[i].hide()
 
-func _on_Custom_pressed():
-	print("Custom Button pressed")
-	#TODO
-	
-func _on_Settings_pressed():
-	print("Settings Button pressed")
-	#TODO
-	
-func _on_How_to_pressed():
-	print("How to Button pressed")
-	#TODO
-
-# -- Main Menu Buttons
+func _CameraMove(coords):
+	# 1802, 540 -> setting-positined
+	# 1123, 540 -> normal positioned 
+	CameraPosition.set_global_position(coords)
+	pass # Replace with function body.

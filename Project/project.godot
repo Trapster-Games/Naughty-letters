@@ -16,8 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="naughty letters"
-run/main_scene="res://Scenes/Menu.tscn"
+run/main_scene="res://Scenes/Menu/Menu.tscn"
 config/icon="res://assets/artwork/Export/Icon/icon.png"
+
+[autoload]
+
+Settings="*res://globals/Settings.gd"
 
 [display]
 

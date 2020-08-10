@@ -1,0 +1,265 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/Theme/RichTextLabel/sen_41pt.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/Menu/MenuBtns.gd" type="Script" id=2]
+[ext_resource path="res://globals/Settings.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Menu/CustomCategorys.gd" type="Script" id=4]
+[ext_resource path="res://assets/Theme/default_theme.tres" type="Theme" id=5]
+[ext_resource path="res://assets/artwork/Export/MainMenu/Zeichenfläche 1 Kopie.png" type="Texture" id=6]
+[ext_resource path="res://assets/artwork/Export/MainMenu/Schriftzug.png" type="Texture" id=7]
+[ext_resource path="res://assets/artwork/Export/MainMenu/backbtn.png" type="Texture" id=8]
+[ext_resource path="res://assets/artwork/Export/background.png" type="Texture" id=9]
+[ext_resource path="res://assets/artwork/Export/MainMenu/add_lineEdit.png" type="Texture" id=10]
+
+[node name="NaughtyLetters" type="Control"]
+theme = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CameraPosition" type="Position2D" parent="."]
+position = Vector2( 1123, 540 )
+
+[node name="Camera2D" type="Camera2D" parent="CameraPosition"]
+current = true
+smoothing_enabled = true
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+
+[node name="Background" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background_Image" type="TextureRect" parent="Background"]
+margin_left = 4.55994
+margin_top = -324.076
+margin_right = 2250.56
+margin_bottom = 755.924
+rect_scale = Vector2( 1.3, 1.3 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="people_drink" type="TextureRect" parent="Background"]
+margin_right = 2246.0
+margin_bottom = 1080.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Headline" type="TextureRect" parent="Background"]
+margin_right = 2246.0
+margin_bottom = 1080.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Control" parent="."]
+margin_left = 1365.0
+margin_right = 2120.0
+margin_bottom = 1080.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Main" type="Control" parent="Menu"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="Menu/Main"]
+margin_left = 235.0
+margin_top = 192.0
+margin_right = 567.0
+margin_bottom = 339.0
+text = "Play"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Custom" type="Button" parent="Menu/Main"]
+margin_left = 235.0
+margin_top = 368.0
+margin_right = 787.0
+margin_bottom = 515.0
+text = "Custom"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="Button" parent="Menu/Main"]
+margin_left = 235.0
+margin_top = 544.0
+margin_right = 718.0
+margin_bottom = 691.0
+text = "Settings"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="How to" type="Button" parent="Menu/Main"]
+margin_left = 235.0
+margin_top = 720.0
+margin_right = 673.0
+margin_bottom = 867.0
+text = "How to"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Control" parent="Menu"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( -2872.05, -135.64 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackBtn" type="TextureButton" parent="Menu/Play"]
+margin_left = -1141.0
+margin_right = 1105.0
+margin_bottom = 1080.0
+texture_normal = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Custom" type="Control" parent="Menu"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( -2872.05, -135.64 )
+
+[node name="BackBtn" type="TextureButton" parent="Menu/Custom"]
+margin_left = -1141.0
+margin_right = 1105.0
+margin_bottom = 1080.0
+texture_normal = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Own Topics" type="Label" parent="Menu/Custom"]
+margin_left = 467.0
+margin_top = 112.0
+margin_right = 1153.0
+margin_bottom = 257.0
+text = "Own Topics:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Menu/Custom"]
+margin_left = 475.0
+margin_top = 269.0
+margin_right = 1155.0
+margin_bottom = 1008.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu/Custom/GridContainer"]
+margin_right = 680.0
+margin_bottom = 123.0
+
+[node name="AddCategory" type="TextureButton" parent="Menu/Custom/GridContainer/CenterContainer"]
+margin_left = 271.0
+margin_right = 408.0
+margin_bottom = 123.0
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="Control" parent="Menu"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( -2872.05, -135.64 )
+
+[node name="BackBtn" type="TextureButton" parent="Menu/Settings"]
+margin_left = -1141.0
+margin_right = 1105.0
+margin_bottom = 1080.0
+texture_normal = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="How to" type="Control" parent="Menu"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( -2872.05, -135.64 )
+
+[node name="BackBtn" type="TextureButton" parent="Menu/How to"]
+margin_left = -1141.0
+margin_right = 1105.0
+margin_bottom = 1080.0
+texture_normal = ExtResource( 8 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menu/How to"]
+margin_left = 476.0
+margin_top = 240.0
+margin_right = 1353.0
+margin_bottom = 909.0
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Naughty Letters is as simple as fun:
+1.	Tap on the left to reveal a new topic 		and read it aloud to the group.
+2.	Afterwards tap on the white field to 		reveal a random letter.
+3.	The first one to shout a word or phrase 		that starts with the letter and fits  the 		category wins.
+4.	This person gets a point / gets to decide 		who needs to drink.
+5.	If nobody can think of anything within 5 		seconds, everybody has to drink.
+	"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="How To" type="Label" parent="Menu/How to"]
+margin_left = 467.0
+margin_top = 112.0
+margin_right = 936.0
+margin_bottom = 257.0
+text = "How To:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Menu/Main/Play" to="Menu" method="_HideExcept" binds= [ "Play" ]]
+[connection signal="pressed" from="Menu/Main/Play" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
+[connection signal="pressed" from="Menu/Main/Custom" to="Menu" method="_HideExcept" binds= [ "Custom" ]]
+[connection signal="pressed" from="Menu/Main/Custom" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
+[connection signal="pressed" from="Menu/Main/Settings" to="Menu" method="_HideExcept" binds= [ "Settings" ]]
+[connection signal="pressed" from="Menu/Main/Settings" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
+[connection signal="pressed" from="Menu/Main/How to" to="Menu" method="_HideExcept" binds= [ "How_to" ]]
+[connection signal="pressed" from="Menu/Main/How to" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
+[connection signal="pressed" from="Menu/Play/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
+[connection signal="pressed" from="Menu/Play/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
+[connection signal="pressed" from="Menu/Custom/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
+[connection signal="pressed" from="Menu/Custom/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
+[connection signal="pressed" from="Menu/Custom/BackBtn" to="Menu/Custom/GridContainer" method="_saveCategories"]
+[connection signal="pressed" from="Menu/Custom/GridContainer/CenterContainer/AddCategory" to="Menu/Custom/GridContainer" method="_on_AddCategory_pressed"]
+[connection signal="pressed" from="Menu/Settings/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
+[connection signal="pressed" from="Menu/Settings/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
+[connection signal="pressed" from="Menu/How to/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
+[connection signal="pressed" from="Menu/How to/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
