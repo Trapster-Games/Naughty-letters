@@ -1,9 +1,12 @@
-[gd_resource type="Theme" load_steps=6 format=2]
+[gd_resource type="Theme" load_steps=9 format=2]
 
 [ext_resource path="res://assets/fonts/Sen/Sen-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/Theme/Button/Box_norma.tres" type="StyleBox" id=2]
 [ext_resource path="res://assets/Theme/RichTextLabel/sen_41pt.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/Theme/LineEdit/LineEdit_normal.tres" type="StyleBox" id=4]
+[ext_resource path="res://assets/Theme/Scrollbars/default.tres" type="StyleBox" id=5]
+[ext_resource path="res://assets/Theme/Button/CheckButton/CheckButton_on.png" type="Texture" id=6]
+[ext_resource path="res://assets/Theme/Button/CheckButton/CheckButton_off.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
@@ -22,6 +25,24 @@ Button/styles/focus = ExtResource( 2 )
 Button/styles/hover = ExtResource( 2 )
 Button/styles/normal = ExtResource( 2 )
 Button/styles/pressed = ExtResource( 2 )
+CheckButton/colors/font_color = Color( 1, 1, 1, 1 )
+CheckButton/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+CheckButton/colors/font_color_hover = Color( 1, 1, 1, 1 )
+CheckButton/colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+CheckButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+CheckButton/constants/check_vadjust = 0
+CheckButton/constants/hseparation = 4
+CheckButton/fonts/font = null
+CheckButton/icons/off = ExtResource( 7 )
+CheckButton/icons/off_disabled = null
+CheckButton/icons/on = ExtResource( 6 )
+CheckButton/icons/on_disabled = null
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
 LineEdit/colors/clear_button_color = Color( 1, 1, 1, 1 )
 LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
 LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
@@ -32,7 +53,7 @@ LineEdit/colors/selection_color = Color( 0.490196, 0.490196, 0.490196, 0 )
 LineEdit/constants/minimum_spaces = 12
 LineEdit/fonts/font = ExtResource( 3 )
 LineEdit/icons/clear = null
-LineEdit/styles/focus = null
+LineEdit/styles/focus = ExtResource( 4 )
 LineEdit/styles/normal = ExtResource( 4 )
 LineEdit/styles/read_only = null
 RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )
@@ -52,3 +73,13 @@ RichTextLabel/fonts/mono_font = null
 RichTextLabel/fonts/normal_font = null
 RichTextLabel/styles/focus = null
 RichTextLabel/styles/normal = null
+ScrollContainer/styles/bg = null
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = ExtResource( 5 )
+VScrollBar/styles/grabber_highlight = ExtResource( 5 )
+VScrollBar/styles/grabber_pressed = ExtResource( 5 )
+VScrollBar/styles/scroll = null
+VScrollBar/styles/scroll_focus = null

@@ -1,7 +1,7 @@
 extends Node
 
-const SAVE_PATH = "res://config.cfg" # in debug
-#const SAVE_PATH = "user://config.cfg" # on build
+#const SAVE_PATH = "res://config.cfg" # in debug
+const SAVE_PATH = "user://config.cfg" # on build
 
 var config_file = ConfigFile.new()
 
@@ -11,6 +11,14 @@ var settings = {
 		"Family" : [],
 		"Adults" : [],
 		"Naughty" : []
+	},
+	"General" :{
+		"DarkMode" : true
+	},
+	"Game" : {
+		"Rounds" : 15,
+		"MirrorMode" : true,
+		"Decks" : ["Family", "Adults", "Naughty", "Custom" ]
 	}
 }
  

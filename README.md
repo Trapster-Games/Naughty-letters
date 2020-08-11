@@ -1,2 +1,0 @@
-# Naughty-letters
-Game

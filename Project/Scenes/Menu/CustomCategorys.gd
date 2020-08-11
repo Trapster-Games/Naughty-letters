@@ -6,7 +6,7 @@ func _ready():
 	DrawCustom()
 
 func DrawCustom():
-	# create a lineEdit + 
+	# create a lineEdit 
 	for category in Settings.get_setting("Categories", "Custom"):
 		CreateLineEditDelete(category)
 	

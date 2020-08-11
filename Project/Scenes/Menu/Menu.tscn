@@ -1,15 +1,36 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/Theme/RichTextLabel/sen_41pt.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scenes/Menu/MenuBtns.gd" type="Script" id=2]
 [ext_resource path="res://globals/Settings.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Menu/CustomCategorys.gd" type="Script" id=4]
 [ext_resource path="res://assets/Theme/default_theme.tres" type="Theme" id=5]
-[ext_resource path="res://assets/artwork/Export/MainMenu/Zeichenfläche 1 Kopie.png" type="Texture" id=6]
+[ext_resource path="res://assets/artwork/Export/MainMenu/people_drinking.png" type="Texture" id=6]
 [ext_resource path="res://assets/artwork/Export/MainMenu/Schriftzug.png" type="Texture" id=7]
 [ext_resource path="res://assets/artwork/Export/MainMenu/backbtn.png" type="Texture" id=8]
 [ext_resource path="res://assets/artwork/Export/background.png" type="Texture" id=9]
 [ext_resource path="res://assets/artwork/Export/MainMenu/add_lineEdit.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Menu/DarkModeBtn.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/Menu/StartGame/RoundsNbr.gd" type="Script" id=13]
+[ext_resource path="res://assets/fonts/Sen/Sen-Regular.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://assets/Theme/custom_Checkboxes.tres" type="Theme" id=15]
+[ext_resource path="res://assets/Theme/Sen-Regular.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://assets/artwork/Export/MainMenu/Start_button.png" type="Texture" id=17]
+[ext_resource path="res://Scenes/Menu/StartGame/Categorie_chooser.gd" type="Script" id=18]
+[ext_resource path="res://Scenes/Menu/Play.gd" type="Script" id=19]
+[ext_resource path="res://Scenes/Menu/StartBtn.gd" type="Script" id=20]
+[ext_resource path="res://Scenes/Menu/StartGame/MirrorMode.gd" type="Script" id=21]
+[ext_resource path="res://Scenes/Menu/Options.gd" type="Script" id=22]
+[ext_resource path="res://Scenes/Menu/StartGame/DecksContner.gd" type="Script" id=23]
+[ext_resource path="res://Scenes/Menu/Background_Image.gd" type="Script" id=24]
+
+[sub_resource type="DynamicFont" id=1]
+size = 41
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 45
+font_data = ExtResource( 16 )
 
 [node name="NaughtyLetters" type="Control"]
 theme = ExtResource( 5 )
@@ -36,12 +57,13 @@ __meta__ = {
 }
 
 [node name="Background_Image" type="TextureRect" parent="Background"]
-margin_left = 4.55994
-margin_top = -324.076
-margin_right = 2250.56
-margin_bottom = 755.924
+margin_left = 2.38419e-07
+margin_top = -324.0
+margin_right = 2246.0
+margin_bottom = 756.0
 rect_scale = Vector2( 1.3, 1.3 )
 texture = ExtResource( 9 )
+script = ExtResource( 24 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -87,6 +109,7 @@ margin_right = 567.0
 margin_bottom = 339.0
 text = "Play"
 align = 0
+script = ExtResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -124,7 +147,6 @@ __meta__ = {
 }
 
 [node name="Play" type="Control" parent="Menu"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( -2872.05, -135.64 )
@@ -141,7 +163,222 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Options" type="Control" parent="Menu/Play"]
+margin_left = -263.0
+margin_right = -223.0
+margin_bottom = 40.0
+script = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MirrorMode" type="CheckButton" parent="Menu/Play/Options"]
+margin_left = 443.0
+margin_top = 112.0
+margin_right = 1330.0
+margin_bottom = 257.0
+text = "Mirror Mode "
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RoundsContner" type="Control" parent="Menu/Play/Options"]
+margin_left = 461.0
+margin_top = 296.0
+margin_right = 1309.0
+margin_bottom = 441.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rounds" type="Label" parent="Menu/Play/Options/RoundsContner"]
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_right = 412.0
+text = "Rounds"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Menu/Play/Options/RoundsContner"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -408.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RoundsNbr" type="Label" parent="Menu/Play/Options/RoundsContner/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = -72.5
+margin_right = 64.0
+margin_bottom = 72.5
+text = "00"
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddRound" type="Button" parent="Menu/Play/Options/RoundsContner/Control"]
+anchor_bottom = 1.0
+margin_right = 89.0
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReniveRound" type="Button" parent="Menu/Play/Options/RoundsContner/Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -128.0
+margin_top = -3.0
+margin_right = 8.0
+margin_bottom = -3.0
+text = "- "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DecksContner" type="Control" parent="Menu/Play/Options"]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 15 )
+script = ExtResource( 23 )
+
+[node name="Label" type="Label" parent="Menu/Play/Options/DecksContner"]
+margin_left = 467.0
+margin_top = 480.0
+margin_right = 832.0
+margin_bottom = 625.0
+text = "Decks:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Family" type="CheckButton" parent="Menu/Play/Options/DecksContner" groups=[
+"CategoryCount",
+]]
+margin_left = 491.0
+margin_top = 640.0
+margin_right = 699.0
+margin_bottom = 736.0
+custom_fonts/font = SubResource( 1 )
+text = "Family"
+align = 1
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cards" type="Label" parent="Menu/Play/Options/DecksContner/Family"]
+margin_left = 16.0
+margin_top = 96.0
+margin_right = 208.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 2 )
+text = "25 cards"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Adults" type="CheckButton" parent="Menu/Play/Options/DecksContner" groups=[
+"CategoryCount",
+]]
+margin_left = 755.0
+margin_top = 640.0
+margin_right = 963.0
+margin_bottom = 736.0
+custom_fonts/font = SubResource( 1 )
+text = "Adults"
+align = 1
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cards" type="Label" parent="Menu/Play/Options/DecksContner/Adults"]
+margin_left = 16.0
+margin_top = 96.0
+margin_right = 208.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 2 )
+text = "25 cards"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Naughty" type="CheckButton" parent="Menu/Play/Options/DecksContner" groups=[
+"CategoryCount",
+]]
+margin_left = 1299.0
+margin_top = 640.0
+margin_right = 1507.0
+margin_bottom = 736.0
+custom_fonts/font = SubResource( 1 )
+text = "Naughty"
+align = 1
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cards" type="Label" parent="Menu/Play/Options/DecksContner/Naughty"]
+margin_left = 16.0
+margin_top = 96.0
+margin_right = 208.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 2 )
+text = "25 cards"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Custom" type="CheckButton" parent="Menu/Play/Options/DecksContner" groups=[
+"CategoryCount",
+]]
+margin_left = 1027.0
+margin_top = 640.0
+margin_right = 1235.0
+margin_bottom = 736.0
+custom_fonts/font = SubResource( 1 )
+text = "Custom"
+align = 1
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cards" type="Label" parent="Menu/Play/Options/DecksContner/Custom"]
+margin_left = 16.0
+margin_top = 96.0
+margin_right = 208.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 2 )
+text = "25 cards"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartBtn" type="TextureButton" parent="Menu/Play"]
+margin_left = 1155.0
+margin_top = 816.0
+margin_right = 1514.0
+margin_bottom = 980.0
+texture_normal = ExtResource( 17 )
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Custom" type="Control" parent="Menu"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( -2872.05, -135.64 )
@@ -165,23 +402,30 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GridContainer" type="GridContainer" parent="Menu/Custom"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Menu/Custom"]
 margin_left = 475.0
-margin_top = 269.0
-margin_right = 1155.0
-margin_bottom = 1008.0
+margin_top = 280.0
+margin_right = 1275.0
+margin_bottom = 968.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Menu/Custom/ScrollContainer"]
+margin_right = 137.0
+margin_bottom = 123.0
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="Menu/Custom/GridContainer"]
-margin_right = 680.0
+[node name="CenterContainer" type="CenterContainer" parent="Menu/Custom/ScrollContainer/GridContainer"]
+margin_right = 137.0
 margin_bottom = 123.0
 
-[node name="AddCategory" type="TextureButton" parent="Menu/Custom/GridContainer/CenterContainer"]
-margin_left = 271.0
-margin_right = 408.0
+[node name="AddCategory" type="TextureButton" parent="Menu/Custom/ScrollContainer/GridContainer/CenterContainer"]
+margin_right = 137.0
 margin_bottom = 123.0
 texture_normal = ExtResource( 10 )
 __meta__ = {
@@ -199,6 +443,17 @@ margin_left = -1141.0
 margin_right = 1105.0
 margin_bottom = 1080.0
 texture_normal = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DarkMode" type="CheckButton" parent="Menu/Settings"]
+margin_left = 459.0
+margin_top = 232.0
+margin_right = 1272.0
+margin_bottom = 448.0
+text = "Dark Mode "
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -247,6 +502,7 @@ __meta__ = {
 }
 [connection signal="pressed" from="Menu/Main/Play" to="Menu" method="_HideExcept" binds= [ "Play" ]]
 [connection signal="pressed" from="Menu/Main/Play" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
+[connection signal="pressed" from="Menu/Main/Play" to="Menu/Main/Play" method="_initCategoryCount"]
 [connection signal="pressed" from="Menu/Main/Custom" to="Menu" method="_HideExcept" binds= [ "Custom" ]]
 [connection signal="pressed" from="Menu/Main/Custom" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
 [connection signal="pressed" from="Menu/Main/Settings" to="Menu" method="_HideExcept" binds= [ "Settings" ]]
@@ -255,11 +511,20 @@ __meta__ = {
 [connection signal="pressed" from="Menu/Main/How to" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
 [connection signal="pressed" from="Menu/Play/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
 [connection signal="pressed" from="Menu/Play/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
+[connection signal="pressed" from="Menu/Play/BackBtn" to="Menu/Play/Options/DecksContner" method="_save_settings"]
+[connection signal="toggled" from="Menu/Play/Options/MirrorMode" to="Menu/Play/Options/MirrorMode" method="_on_MirrorMode_toggled"]
+[connection signal="pressed" from="Menu/Play/Options/RoundsContner/Control/AddRound" to="Menu/Play/Options/RoundsContner/Control/RoundsNbr" method="_AddRound"]
+[connection signal="pressed" from="Menu/Play/Options/RoundsContner/Control/ReniveRound" to="Menu/Play/Options/RoundsContner/Control/RoundsNbr" method="_RemoveRound"]
+[connection signal="pressed" from="Menu/Play/StartBtn" to="Menu/Play/Options/DecksContner" method="_save_settings"]
+[connection signal="pressed" from="Menu/Play/StartBtn" to="Menu/Play/StartBtn" method="_on_StartBtn_pressed"]
 [connection signal="pressed" from="Menu/Custom/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
 [connection signal="pressed" from="Menu/Custom/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
-[connection signal="pressed" from="Menu/Custom/BackBtn" to="Menu/Custom/GridContainer" method="_saveCategories"]
-[connection signal="pressed" from="Menu/Custom/GridContainer/CenterContainer/AddCategory" to="Menu/Custom/GridContainer" method="_on_AddCategory_pressed"]
+[connection signal="pressed" from="Menu/Custom/BackBtn" to="Menu/Custom/ScrollContainer/GridContainer" method="_saveCategories"]
+[connection signal="pressed" from="Menu/Custom/ScrollContainer/GridContainer/CenterContainer/AddCategory" to="Menu/Custom/ScrollContainer/GridContainer" method="_on_AddCategory_pressed"]
 [connection signal="pressed" from="Menu/Settings/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
 [connection signal="pressed" from="Menu/Settings/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
+[connection signal="pressed" from="Menu/Settings/BackBtn" to="Background/Background_Image" method="_setDarkOrDefault"]
+[connection signal="pressed" from="Menu/Settings/BackBtn" to="Menu/Settings/DarkMode" method="_SaveGeneralSettings"]
+[connection signal="toggled" from="Menu/Settings/DarkMode" to="Menu/Settings/DarkMode" method="_on_DarkMode_toggled"]
 [connection signal="pressed" from="Menu/How to/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
 [connection signal="pressed" from="Menu/How to/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
