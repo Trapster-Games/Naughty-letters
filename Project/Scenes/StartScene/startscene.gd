@@ -11,7 +11,7 @@ func _ready():
 	
 	get_node("AnimationPlayer").play("logo")
 	
-	SceneChanger.change_scene("res://Scenes/Menu/Menu.tscn", 2)
+	SceneChanger.change_scene("res://Scenes/Menu/Menu.tscn", 2.3)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

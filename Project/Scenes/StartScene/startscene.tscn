@@ -74,7 +74,6 @@ margin_bottom = 2073.0
 texture = ExtResource( 3 )
 
 [node name="Logo" type="TextureRect" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 margin_right = 2246.0
 margin_bottom = 1080.0
 texture = ExtResource( 1 )
