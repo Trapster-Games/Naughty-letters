@@ -16,8 +16,8 @@ _global_script_class_icons={
 [application]
 
 config/name="naughty letters"
-run/main_scene="res://Scenes/Menu/Menu.tscn"
-boot_splash/image="res://assets/artwork/Export/SplashScreen/splashscreen.png"
+run/main_scene="res://Scenes/StartScene/startscene.tscn"
+boot_splash/image="res://assets/artwork/Export/StartMenu/splashscreen.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://assets/artwork/Export/Icon/icon.png"
 
@@ -25,6 +25,7 @@ config/icon="res://assets/artwork/Export/Icon/icon.png"
 
 Settings="*res://globals/Settings.gd"
 ScreenSize="*res://globals/ScreenSize.gd"
+SceneChanger="*res://globals/SceneChanger/SceneChanger.tscn"
 
 [display]
 
