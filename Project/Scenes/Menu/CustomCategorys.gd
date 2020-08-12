@@ -13,13 +13,13 @@ func DrawCustom():
 func CreateLineEditDelete(text):
 	var node = LineEdit.new()
 	node.text = text
-	node.rect_min_size = Vector2(600,60)
+	node.rect_min_size = Vector2(600,120)
 	add_child(node)
 	
 	var Delete_btn = TextureButton.new()
 	Delete_btn.set_normal_texture(delete_picture)
 	Delete_btn.set_position(Vector2(600, -5))
-	Delete_btn.set_scale(Vector2(0.6,0.6))
+	Delete_btn.set_scale(Vector2(1,1))
 	Delete_btn.connect("pressed", self, "_removeLineEdit", [Delete_btn])#todo: points to wrong method
 	node.add_child(Delete_btn)
 	# so the addcategory button is on the bottom of the gridcontainer

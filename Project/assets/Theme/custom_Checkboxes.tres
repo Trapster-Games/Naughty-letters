@@ -2,9 +2,9 @@
 
 [ext_resource path="res://assets/Theme/Button/CheckButton/Categories/off.tres" type="StyleBox" id=1]
 
-[sub_resource type="StreamTexture" id=4]
+[sub_resource type="StreamTexture" id=1]
 
-[sub_resource type="StreamTexture" id=5]
+[sub_resource type="StreamTexture" id=2]
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 1, 1, 1, 1 )
@@ -29,9 +29,9 @@ CheckButton/colors/font_color_pressed = Color( 0.988235, 0.541176, 0.0588235, 1 
 CheckButton/constants/check_vadjust = 0
 CheckButton/constants/hseparation = 4
 CheckButton/fonts/font = null
-CheckButton/icons/off = SubResource( 4 )
+CheckButton/icons/off = SubResource( 1 )
 CheckButton/icons/off_disabled = null
-CheckButton/icons/on = SubResource( 5 )
+CheckButton/icons/on = SubResource( 2 )
 CheckButton/icons/on_disabled = null
 CheckButton/styles/disabled = null
 CheckButton/styles/focus = null

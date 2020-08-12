@@ -13,7 +13,7 @@ var settings = {
 		"Naughty" : []
 	},
 	"General" :{
-		"DarkMode" : true
+		"DarkMode" : false
 	},
 	"Game" : {
 		"Rounds" : 15,

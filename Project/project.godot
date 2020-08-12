@@ -17,13 +17,17 @@ _global_script_class_icons={
 
 config/name="naughty letters"
 run/main_scene="res://Scenes/Menu/Menu.tscn"
+boot_splash/image="res://assets/artwork/Export/SplashScreen/splashscreen.png"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://assets/artwork/Export/Icon/icon.png"
 
 [autoload]
 
 Settings="*res://globals/Settings.gd"
+ScreenSize="*res://globals/ScreenSize.gd"
 
 [display]
 
 window/size/width=2246
 window/size/height=1080
+window/stretch/mode="2d"

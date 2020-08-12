@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/artwork/Export/background.png" type="Texture" id=9]
 [ext_resource path="res://assets/artwork/Export/MainMenu/add_lineEdit.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Menu/DarkModeBtn.gd" type="Script" id=11]
+[ext_resource path="res://assets/artwork/Export/background_pattern.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/Menu/StartGame/RoundsNbr.gd" type="Script" id=13]
 [ext_resource path="res://assets/fonts/Sen/Sen-Regular.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://assets/Theme/custom_Checkboxes.tres" type="Theme" id=15]
@@ -20,7 +21,6 @@
 [ext_resource path="res://Scenes/Menu/Play.gd" type="Script" id=19]
 [ext_resource path="res://Scenes/Menu/StartBtn.gd" type="Script" id=20]
 [ext_resource path="res://Scenes/Menu/StartGame/MirrorMode.gd" type="Script" id=21]
-[ext_resource path="res://Scenes/Menu/Options.gd" type="Script" id=22]
 [ext_resource path="res://Scenes/Menu/StartGame/DecksContner.gd" type="Script" id=23]
 [ext_resource path="res://Scenes/Menu/Background_Image.gd" type="Script" id=24]
 
@@ -38,6 +38,42 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Background_sizable" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background_Image" type="TextureRect" parent="Background_sizable"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1123.0
+margin_top = -540.0
+margin_right = 1123.0
+margin_bottom = 540.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 9 )
+script = ExtResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background_pattern" type="TextureRect" parent="Background_sizable"]
+margin_left = -956.0
+margin_top = -452.0
+margin_right = 3270.0
+margin_bottom = 1621.0
+texture = ExtResource( 12 )
+
 [node name="CameraPosition" type="Position2D" parent="."]
 position = Vector2( 1123, 540 )
 
@@ -49,34 +85,23 @@ drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
 
-[node name="Background" type="Control" parent="."]
+[node name="view_back" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background_Image" type="TextureRect" parent="Background"]
-margin_left = 2.38419e-07
-margin_top = -324.0
+[node name="people_drink" type="TextureRect" parent="view_back"]
+margin_top = 65.0
 margin_right = 2246.0
-margin_bottom = 756.0
-rect_scale = Vector2( 1.3, 1.3 )
-texture = ExtResource( 9 )
-script = ExtResource( 24 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="people_drink" type="TextureRect" parent="Background"]
-margin_right = 2246.0
-margin_bottom = 1080.0
+margin_bottom = 1145.0
 texture = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Headline" type="TextureRect" parent="Background"]
+[node name="Headline" type="TextureRect" parent="view_back"]
 margin_right = 2246.0
 margin_bottom = 1080.0
 texture = ExtResource( 7 )
@@ -96,7 +121,8 @@ __meta__ = {
 
 [node name="Main" type="Control" parent="Menu"]
 visible = false
-margin_right = 40.0
+margin_left = -57.0
+margin_right = -17.0
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -155,9 +181,10 @@ __meta__ = {
 }
 
 [node name="BackBtn" type="TextureButton" parent="Menu/Play"]
-margin_left = -1141.0
-margin_right = 1105.0
-margin_bottom = 1080.0
+margin_left = -197.0
+margin_top = 768.0
+margin_right = 433.0
+margin_bottom = 1024.0
 texture_normal = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -167,7 +194,6 @@ __meta__ = {
 margin_left = -263.0
 margin_right = -223.0
 margin_bottom = 40.0
-script = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -226,21 +252,20 @@ __meta__ = {
 }
 
 [node name="AddRound" type="Button" parent="Menu/Play/Options/RoundsContner/Control"]
+anchor_left = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 89.0
+margin_left = -89.0
 text = "+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ReniveRound" type="Button" parent="Menu/Play/Options/RoundsContner/Control"]
-anchor_left = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -128.0
-margin_top = -3.0
-margin_right = 8.0
-margin_bottom = -3.0
+margin_top = -4.0
+margin_right = 109.0
+margin_bottom = -4.0
 text = "- "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -384,9 +409,10 @@ margin_bottom = 40.0
 rect_pivot_offset = Vector2( -2872.05, -135.64 )
 
 [node name="BackBtn" type="TextureButton" parent="Menu/Custom"]
-margin_left = -1141.0
-margin_right = 1105.0
-margin_bottom = 1080.0
+margin_left = -197.0
+margin_top = 768.0
+margin_right = 433.0
+margin_bottom = 1024.0
 texture_normal = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -405,7 +431,7 @@ __meta__ = {
 [node name="ScrollContainer" type="ScrollContainer" parent="Menu/Custom"]
 margin_left = 475.0
 margin_top = 280.0
-margin_right = 1275.0
+margin_right = 1339.0
 margin_bottom = 968.0
 scroll_horizontal_enabled = false
 __meta__ = {
@@ -439,9 +465,10 @@ margin_bottom = 40.0
 rect_pivot_offset = Vector2( -2872.05, -135.64 )
 
 [node name="BackBtn" type="TextureButton" parent="Menu/Settings"]
-margin_left = -1141.0
-margin_right = 1105.0
-margin_bottom = 1080.0
+margin_left = -197.0
+margin_top = 768.0
+margin_right = 433.0
+margin_bottom = 1024.0
 texture_normal = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -465,9 +492,10 @@ margin_bottom = 40.0
 rect_pivot_offset = Vector2( -2872.05, -135.64 )
 
 [node name="BackBtn" type="TextureButton" parent="Menu/How to"]
-margin_left = -1141.0
-margin_right = 1105.0
-margin_bottom = 1080.0
+margin_left = -197.0
+margin_top = 768.0
+margin_right = 433.0
+margin_bottom = 1024.0
 texture_normal = ExtResource( 8 )
 script = ExtResource( 3 )
 __meta__ = {
@@ -475,17 +503,23 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Menu/How to"]
-margin_left = 476.0
+margin_left = 475.0
 margin_top = 240.0
-margin_right = 1353.0
+margin_right = 1352.0
 margin_bottom = 909.0
 custom_fonts/normal_font = ExtResource( 1 )
 text = "Naughty Letters is as simple as fun:
-1.	Tap on the left to reveal a new topic 		and read it aloud to the group.
-2.	Afterwards tap on the white field to 		reveal a random letter.
-3.	The first one to shout a word or phrase 		that starts with the letter and fits  the 		category wins.
-4.	This person gets a point / gets to decide 		who needs to drink.
-5.	If nobody can think of anything within 5 		seconds, everybody has to drink.
+1. Tap on the left to reveal a new topic 
+	and read it aloud to the group.
+2. Afterwards tap on the white field to
+	reveal a random letter.
+3. The first one to shout a word or phrase
+	that starts with the letter and fits the
+	category wins.
+4. This person gets a point / gets to decide
+	who needs to drink.
+5. If nobody can think of anything within 5
+	seconds, everybody has to drink.
 	"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -493,16 +527,16 @@ __meta__ = {
 
 [node name="How To" type="Label" parent="Menu/How to"]
 margin_left = 467.0
-margin_top = 112.0
+margin_top = 97.0
 margin_right = 936.0
-margin_bottom = 257.0
+margin_bottom = 242.0
 text = "How To:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="pressed" from="Menu/Main/Play" to="Menu/Main/Play" method="_initCategoryCount"]
 [connection signal="pressed" from="Menu/Main/Play" to="Menu" method="_HideExcept" binds= [ "Play" ]]
 [connection signal="pressed" from="Menu/Main/Play" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
-[connection signal="pressed" from="Menu/Main/Play" to="Menu/Main/Play" method="_initCategoryCount"]
 [connection signal="pressed" from="Menu/Main/Custom" to="Menu" method="_HideExcept" binds= [ "Custom" ]]
 [connection signal="pressed" from="Menu/Main/Custom" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
 [connection signal="pressed" from="Menu/Main/Settings" to="Menu" method="_HideExcept" binds= [ "Settings" ]]
@@ -515,16 +549,16 @@ __meta__ = {
 [connection signal="toggled" from="Menu/Play/Options/MirrorMode" to="Menu/Play/Options/MirrorMode" method="_on_MirrorMode_toggled"]
 [connection signal="pressed" from="Menu/Play/Options/RoundsContner/Control/AddRound" to="Menu/Play/Options/RoundsContner/Control/RoundsNbr" method="_AddRound"]
 [connection signal="pressed" from="Menu/Play/Options/RoundsContner/Control/ReniveRound" to="Menu/Play/Options/RoundsContner/Control/RoundsNbr" method="_RemoveRound"]
-[connection signal="pressed" from="Menu/Play/StartBtn" to="Menu/Play/Options/DecksContner" method="_save_settings"]
 [connection signal="pressed" from="Menu/Play/StartBtn" to="Menu/Play/StartBtn" method="_on_StartBtn_pressed"]
+[connection signal="pressed" from="Menu/Play/StartBtn" to="Menu/Play/Options/DecksContner" method="_save_settings"]
 [connection signal="pressed" from="Menu/Custom/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
 [connection signal="pressed" from="Menu/Custom/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
 [connection signal="pressed" from="Menu/Custom/BackBtn" to="Menu/Custom/ScrollContainer/GridContainer" method="_saveCategories"]
 [connection signal="pressed" from="Menu/Custom/ScrollContainer/GridContainer/CenterContainer/AddCategory" to="Menu/Custom/ScrollContainer/GridContainer" method="_on_AddCategory_pressed"]
+[connection signal="pressed" from="Menu/Settings/BackBtn" to="Menu/Settings/DarkMode" method="_SaveGeneralSettings"]
 [connection signal="pressed" from="Menu/Settings/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
 [connection signal="pressed" from="Menu/Settings/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
-[connection signal="pressed" from="Menu/Settings/BackBtn" to="Background/Background_Image" method="_setDarkOrDefault"]
-[connection signal="pressed" from="Menu/Settings/BackBtn" to="Menu/Settings/DarkMode" method="_SaveGeneralSettings"]
+[connection signal="pressed" from="Menu/Settings/BackBtn" to="Background_sizable/Background_Image" method="_setDarkOrDefault"]
 [connection signal="toggled" from="Menu/Settings/DarkMode" to="Menu/Settings/DarkMode" method="_on_DarkMode_toggled"]
 [connection signal="pressed" from="Menu/How to/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
 [connection signal="pressed" from="Menu/How to/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
