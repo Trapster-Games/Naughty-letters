@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://assets/Theme/RichTextLabel/sen_41pt.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scenes/Menu/MenuBtns.gd" type="Script" id=2]
@@ -24,6 +24,8 @@
 [ext_resource path="res://assets/artwork/Export/MainMenu/drinking-people/bottle.png" type="Texture" id=22]
 [ext_resource path="res://Scenes/Menu/StartGame/DecksContner.gd" type="Script" id=23]
 [ext_resource path="res://Scenes/Menu/Background_Image.gd" type="Script" id=24]
+[ext_resource path="res://assets/artwork/Export/Options/english.png" type="Texture" id=25]
+[ext_resource path="res://Scenes/Menu/CardLanguage.gd" type="Script" id=26]
 
 [sub_resource type="DynamicFont" id=1]
 size = 41
@@ -163,9 +165,9 @@ __meta__ = {
 }
 
 [node name="Background_pattern" type="TextureRect" parent="Background_sizable"]
-margin_left = -940.0
+margin_left = -804.0
 margin_top = -412.0
-margin_right = 3286.0
+margin_right = 3422.0
 margin_bottom = 1661.0
 texture = ExtResource( 12 )
 __meta__ = {
@@ -242,8 +244,8 @@ __meta__ = {
 }
 
 [node name="Menu" type="Control" parent="."]
-margin_left = 1365.0
-margin_right = 2120.0
+margin_left = 1368.0
+margin_right = 3275.0
 margin_bottom = 1080.0
 script = ExtResource( 2 )
 __meta__ = {
@@ -252,6 +254,7 @@ __meta__ = {
 }
 
 [node name="Main" type="Control" parent="Menu"]
+visible = false
 margin_left = -57.0
 margin_right = -17.0
 margin_bottom = 40.0
@@ -592,7 +595,6 @@ __meta__ = {
 }
 
 [node name="Settings" type="Control" parent="Menu"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( -2872.05, -135.64 )
@@ -608,12 +610,33 @@ __meta__ = {
 }
 
 [node name="DarkMode" type="CheckButton" parent="Menu/Settings"]
-margin_left = 459.0
+margin_left = 192.0
 margin_top = 232.0
-margin_right = 1272.0
+margin_right = 1384.0
 margin_bottom = 448.0
 text = "Dark Mode "
 script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardLanguage" type="TextureButton" parent="Menu/Settings"]
+margin_left = 1246.0
+margin_top = 464.0
+margin_right = 1383.0
+margin_bottom = 537.0
+texture_normal = ExtResource( 25 )
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu/Settings/CardLanguage"]
+margin_left = -1024.0
+margin_top = -48.0
+margin_right = -149.0
+margin_bottom = 97.0
+text = "Card Language"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -671,31 +694,32 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "bottles"
 anims/bottles = SubResource( 3 )
-[connection signal="pressed" from="Menu/Main/Play" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
 [connection signal="pressed" from="Menu/Main/Play" to="Menu" method="_HideExcept" binds= [ "Play" ]]
+[connection signal="pressed" from="Menu/Main/Play" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
 [connection signal="pressed" from="Menu/Main/Play" to="Menu/Main/Play" method="_initCategoryCount"]
-[connection signal="pressed" from="Menu/Main/Custom" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
 [connection signal="pressed" from="Menu/Main/Custom" to="Menu" method="_HideExcept" binds= [ "Custom" ]]
-[connection signal="pressed" from="Menu/Main/Settings" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
+[connection signal="pressed" from="Menu/Main/Custom" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
 [connection signal="pressed" from="Menu/Main/Settings" to="Menu" method="_HideExcept" binds= [ "Settings" ]]
-[connection signal="pressed" from="Menu/Main/How to" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
+[connection signal="pressed" from="Menu/Main/Settings" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
 [connection signal="pressed" from="Menu/Main/How to" to="Menu" method="_HideExcept" binds= [ "How_to" ]]
-[connection signal="pressed" from="Menu/Play/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
+[connection signal="pressed" from="Menu/Main/How to" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
 [connection signal="pressed" from="Menu/Play/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
+[connection signal="pressed" from="Menu/Play/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
 [connection signal="pressed" from="Menu/Play/BackBtn" to="Menu/Play/Options/DecksContner" method="_save_settings"]
 [connection signal="toggled" from="Menu/Play/Options/MirrorMode" to="Menu/Play/Options/MirrorMode" method="_on_MirrorMode_toggled"]
 [connection signal="pressed" from="Menu/Play/Options/RoundsContner/Control/AddRound" to="Menu/Play/Options/RoundsContner/Control/RoundsNbr" method="_AddRound"]
 [connection signal="pressed" from="Menu/Play/Options/RoundsContner/Control/ReniveRound" to="Menu/Play/Options/RoundsContner/Control/RoundsNbr" method="_RemoveRound"]
 [connection signal="pressed" from="Menu/Play/StartBtn" to="Menu/Play/Options/DecksContner" method="_save_settings"]
 [connection signal="pressed" from="Menu/Play/StartBtn" to="Menu/Play/StartBtn" method="_on_StartBtn_pressed"]
-[connection signal="pressed" from="Menu/Custom/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
 [connection signal="pressed" from="Menu/Custom/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
+[connection signal="pressed" from="Menu/Custom/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
 [connection signal="pressed" from="Menu/Custom/BackBtn" to="Menu/Custom/ScrollContainer/GridContainer" method="_saveCategories"]
 [connection signal="pressed" from="Menu/Custom/ScrollContainer/GridContainer/CenterContainer/AddCategory" to="Menu/Custom/ScrollContainer/GridContainer" method="_on_AddCategory_pressed"]
-[connection signal="pressed" from="Menu/Settings/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
-[connection signal="pressed" from="Menu/Settings/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
 [connection signal="pressed" from="Menu/Settings/BackBtn" to="Background_sizable/Background_Image" method="_setDarkOrDefault"]
+[connection signal="pressed" from="Menu/Settings/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
+[connection signal="pressed" from="Menu/Settings/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
 [connection signal="pressed" from="Menu/Settings/BackBtn" to="Menu/Settings/DarkMode" method="_SaveGeneralSettings"]
 [connection signal="toggled" from="Menu/Settings/DarkMode" to="Menu/Settings/DarkMode" method="_on_DarkMode_toggled"]
-[connection signal="pressed" from="Menu/How to/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
+[connection signal="pressed" from="Menu/Settings/CardLanguage" to="Menu/Settings/CardLanguage" method="_on_CardLanguage_pressed"]
 [connection signal="pressed" from="Menu/How to/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
+[connection signal="pressed" from="Menu/How to/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]

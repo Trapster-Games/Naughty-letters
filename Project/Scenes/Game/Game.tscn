@@ -148,22 +148,6 @@ custom_styles/normal = SubResource( 1 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.988235, 0.541176, 0.0588235, 1 )
 custom_colors/font_color_hover = Color( 0.988235, 0.541176, 0.0588235, 1 )
-text = "S"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SpinAlphabet2" type="Button" parent="Mirrored"]
-margin_left = 1784.0
-margin_top = 640.0
-margin_right = 2168.0
-margin_bottom = 1024.0
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0.988235, 0.541176, 0.0588235, 1 )
-custom_colors/font_color_hover = Color( 0.988235, 0.541176, 0.0588235, 1 )
 custom_colors/font_color_pressed = Color( 0.988235, 0.541176, 0.0588235, 1 )
 text = "S"
 __meta__ = {
@@ -235,7 +219,6 @@ __meta__ = {
 }
 [connection signal="pressed" from="NonMirrored/SpinAlphabet" to="." method="_on_SpinAlphabet_pressed"]
 [connection signal="pressed" from="Mirrored/SpinAlphabet" to="." method="_on_SpinAlphabet_pressed"]
-[connection signal="pressed" from="Mirrored/SpinAlphabet2" to="." method="_on_SpinAlphabet_pressed"]
 [connection signal="pressed" from="Mirrored/SpinAlphabetMirrored" to="." method="_on_SpinAlphabet_pressed"]
 [connection signal="pressed" from="BackBtn" to="BackBtn" method="_on_BackBtn_pressed"]
 [connection signal="pressed" from="NextCategory" to="." method="_on_NextCategory_pressed"]
