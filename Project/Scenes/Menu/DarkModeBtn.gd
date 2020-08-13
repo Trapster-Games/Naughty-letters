@@ -14,7 +14,7 @@ func _SaveGeneralSettings():
 
 func _on_DarkMode_toggled(button_pressed):
 	Settings.set_setting("General", "DarkMode", button_pressed)
-	print("changed value")
+	#print("Darkmode: " + str(button_pressed))
 	backgroundPicture._setDarkOrDefault()
 	
 	for deck in CardDecks:

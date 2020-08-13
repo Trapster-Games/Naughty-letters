@@ -10,6 +10,7 @@ extends Control
 func _ready():
 	
 	get_node("AnimationPlayer").play("logo")
+	#get_node("AnimationPlayer").play_backwards("logo")
 	
 	SceneChanger.change_scene("res://Scenes/Menu/Menu.tscn", 2.3)
 

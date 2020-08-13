@@ -1,11 +1,11 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://assets/Theme/RichTextLabel/sen_41pt.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scenes/Menu/MenuBtns.gd" type="Script" id=2]
 [ext_resource path="res://globals/Settings.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Menu/CustomCategorys.gd" type="Script" id=4]
 [ext_resource path="res://assets/Theme/default_theme.tres" type="Theme" id=5]
-[ext_resource path="res://assets/artwork/Export/MainMenu/people_drinking.png" type="Texture" id=6]
+[ext_resource path="res://assets/artwork/Export/MainMenu/drinking-people/drinking_people.png" type="Texture" id=6]
 [ext_resource path="res://assets/artwork/Export/MainMenu/Schriftzug.png" type="Texture" id=7]
 [ext_resource path="res://assets/artwork/Export/MainMenu/backbtn.png" type="Texture" id=8]
 [ext_resource path="res://assets/artwork/Export/background.png" type="Texture" id=9]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Scenes/Menu/Play.gd" type="Script" id=19]
 [ext_resource path="res://Scenes/Menu/StartBtn.gd" type="Script" id=20]
 [ext_resource path="res://Scenes/Menu/StartGame/MirrorMode.gd" type="Script" id=21]
+[ext_resource path="res://assets/artwork/Export/MainMenu/drinking-people/bottle.png" type="Texture" id=22]
 [ext_resource path="res://Scenes/Menu/StartGame/DecksContner.gd" type="Script" id=23]
 [ext_resource path="res://Scenes/Menu/Background_Image.gd" type="Script" id=24]
 
@@ -31,6 +32,100 @@ font_data = ExtResource( 14 )
 [sub_resource type="DynamicFont" id=2]
 size = 45
 font_data = ExtResource( 16 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "bottles"
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("view_back/people_drink/bottle2:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 488, -0.25, 0, 0.25, 0, 488, -0.25, 0, 0.25, 0, 488, -0.25, 0, 0.25, 0, 488, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.5, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("view_back/people_drink/bottle2:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 32, -0.25, 0, 0.25, 0, 32, -0.25, 0, 0.25, 0, 32, -0.25, 0, 0.25, 0, 32, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.5, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("view_back/people_drink/bottle3:rect_position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 544, -0.25, 0, 0.25, 0, 546, -0.25, 0, 0.25, 0, 544, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("view_back/people_drink/bottle3:rect_position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 8, -0.25, 0, 0.25, 0, 10, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("view_back/people_drink/bottle1:rect_position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 592, -0.25, 0, 0.25, 0, 592, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("view_back/people_drink/bottle1:rect_position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 32, -0.25, 0, 0.25, 0, 32, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("view_back/people_drink/bottle2:rect_rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -2.49481, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.5, 1 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("view_back/people_drink/bottle3:rect_rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1.78183, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("view_back/people_drink/bottle1:rect_rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 6.27716, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
 
 [node name="NaughtyLetters" type="Control"]
 theme = ExtResource( 5 )
@@ -95,19 +190,53 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="people_drink" type="TextureRect" parent="view_back"]
-margin_top = 112.0
+[node name="Headline" type="TextureRect" parent="view_back"]
 margin_right = 2246.0
-margin_bottom = 1192.0
+margin_bottom = 1080.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="people_drink" type="TextureRect" parent="view_back"]
+margin_left = 104.0
+margin_top = 584.0
+margin_right = 1196.0
+margin_bottom = 1158.0
 texture = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Headline" type="TextureRect" parent="view_back"]
-margin_right = 2246.0
-margin_bottom = 1080.0
-texture = ExtResource( 7 )
+[node name="bottle1" type="TextureRect" parent="view_back/people_drink"]
+margin_left = 592.0
+margin_top = 32.0
+margin_right = 632.0
+margin_bottom = 156.0
+rect_rotation = 6.27716
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bottle2" type="TextureRect" parent="view_back/people_drink"]
+margin_left = 488.0
+margin_top = 32.0
+margin_right = 528.003
+margin_bottom = 156.001
+rect_rotation = -2.49481
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bottle3" type="TextureRect" parent="view_back/people_drink"]
+margin_left = 546.0
+margin_top = 10.0
+margin_right = 586.0
+margin_bottom = 134.0
+rect_rotation = 1.78183
+texture = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -123,7 +252,6 @@ __meta__ = {
 }
 
 [node name="Main" type="Control" parent="Menu"]
-visible = false
 margin_left = -57.0
 margin_right = -17.0
 margin_bottom = 40.0
@@ -176,6 +304,7 @@ __meta__ = {
 }
 
 [node name="Play" type="Control" parent="Menu"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( -2872.05, -135.64 )
@@ -244,11 +373,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -64.0
+margin_left = -111.0
 margin_top = -72.5
-margin_right = 64.0
+margin_right = 113.0
 margin_bottom = 72.5
 text = "00"
+align = 1
 script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -537,31 +667,35 @@ text = "How To:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Menu/Main/Play" to="Menu/Main/Play" method="_initCategoryCount"]
-[connection signal="pressed" from="Menu/Main/Play" to="Menu" method="_HideExcept" binds= [ "Play" ]]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "bottles"
+anims/bottles = SubResource( 3 )
 [connection signal="pressed" from="Menu/Main/Play" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
-[connection signal="pressed" from="Menu/Main/Custom" to="Menu" method="_HideExcept" binds= [ "Custom" ]]
+[connection signal="pressed" from="Menu/Main/Play" to="Menu" method="_HideExcept" binds= [ "Play" ]]
+[connection signal="pressed" from="Menu/Main/Play" to="Menu/Main/Play" method="_initCategoryCount"]
 [connection signal="pressed" from="Menu/Main/Custom" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
-[connection signal="pressed" from="Menu/Main/Settings" to="Menu" method="_HideExcept" binds= [ "Settings" ]]
+[connection signal="pressed" from="Menu/Main/Custom" to="Menu" method="_HideExcept" binds= [ "Custom" ]]
 [connection signal="pressed" from="Menu/Main/Settings" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
-[connection signal="pressed" from="Menu/Main/How to" to="Menu" method="_HideExcept" binds= [ "How_to" ]]
+[connection signal="pressed" from="Menu/Main/Settings" to="Menu" method="_HideExcept" binds= [ "Settings" ]]
 [connection signal="pressed" from="Menu/Main/How to" to="Menu" method="_CameraMove" binds= [ Vector2( 1802, 540 ) ]]
-[connection signal="pressed" from="Menu/Play/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
+[connection signal="pressed" from="Menu/Main/How to" to="Menu" method="_HideExcept" binds= [ "How_to" ]]
 [connection signal="pressed" from="Menu/Play/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
+[connection signal="pressed" from="Menu/Play/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
 [connection signal="pressed" from="Menu/Play/BackBtn" to="Menu/Play/Options/DecksContner" method="_save_settings"]
 [connection signal="toggled" from="Menu/Play/Options/MirrorMode" to="Menu/Play/Options/MirrorMode" method="_on_MirrorMode_toggled"]
 [connection signal="pressed" from="Menu/Play/Options/RoundsContner/Control/AddRound" to="Menu/Play/Options/RoundsContner/Control/RoundsNbr" method="_AddRound"]
 [connection signal="pressed" from="Menu/Play/Options/RoundsContner/Control/ReniveRound" to="Menu/Play/Options/RoundsContner/Control/RoundsNbr" method="_RemoveRound"]
 [connection signal="pressed" from="Menu/Play/StartBtn" to="Menu/Play/Options/DecksContner" method="_save_settings"]
 [connection signal="pressed" from="Menu/Play/StartBtn" to="Menu/Play/StartBtn" method="_on_StartBtn_pressed"]
-[connection signal="pressed" from="Menu/Custom/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
 [connection signal="pressed" from="Menu/Custom/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
+[connection signal="pressed" from="Menu/Custom/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
 [connection signal="pressed" from="Menu/Custom/BackBtn" to="Menu/Custom/ScrollContainer/GridContainer" method="_saveCategories"]
 [connection signal="pressed" from="Menu/Custom/ScrollContainer/GridContainer/CenterContainer/AddCategory" to="Menu/Custom/ScrollContainer/GridContainer" method="_on_AddCategory_pressed"]
-[connection signal="pressed" from="Menu/Settings/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
 [connection signal="pressed" from="Menu/Settings/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
+[connection signal="pressed" from="Menu/Settings/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
 [connection signal="pressed" from="Menu/Settings/BackBtn" to="Background_sizable/Background_Image" method="_setDarkOrDefault"]
 [connection signal="pressed" from="Menu/Settings/BackBtn" to="Menu/Settings/DarkMode" method="_SaveGeneralSettings"]
 [connection signal="toggled" from="Menu/Settings/DarkMode" to="Menu/Settings/DarkMode" method="_on_DarkMode_toggled"]
-[connection signal="pressed" from="Menu/How to/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]
 [connection signal="pressed" from="Menu/How to/BackBtn" to="Menu" method="_CameraMove" binds= [ Vector2( 1123, 540 ) ]]
+[connection signal="pressed" from="Menu/How to/BackBtn" to="Menu" method="_HideExcept" binds= [ "Main" ]]

@@ -28,7 +28,6 @@ func CreateLineEditDelete(text):
 func _saveCategories():
 	var nodeText = []
 	for node in self.get_children():
-		print(node)
 		if node != null and node is LineEdit:
 			if node.get_text() != "":
 				nodeText.append(node.get_text())

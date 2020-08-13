@@ -4,4 +4,4 @@ extends TextureButton
 
 
 func _on_StartBtn_pressed():
-	pass #TODO start game scene
+	SceneChanger.change_scene("res://Scenes/Game/Game.tscn")
