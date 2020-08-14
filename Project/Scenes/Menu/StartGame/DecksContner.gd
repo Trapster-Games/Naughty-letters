@@ -13,11 +13,14 @@ func _ready():
 			if Settings.get_setting("Game", "Decks").has(category.text):
 				category.set_pressed(true)
 
-
-func _save_settings():
+func _category_toggled():
 	var takenCategories = []
 	for category in self.get_children():
 		if category is CheckButton and category.pressed == true:
 			takenCategories.append(category.text)
 	Settings.set_setting("Game", "Decks", takenCategories)
 	Settings.save_settings()
+	if takenCategories.size() <= 0:
+		get_parent().get_parent().get_node("StartBtn").set_disabled(true)
+	else:
+		get_parent().get_parent().get_node("StartBtn").set_disabled(false)
